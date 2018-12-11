@@ -33,10 +33,16 @@
         link
         inset-delimiter
       >
-        <q-list-header>Essential Links</q-list-header>
-        <q-item @click.native="openURL('http://quasar-framework.org')">
+        <q-list-header>Inicio</q-list-header>
+        <q-item to="/">
           <q-item-side icon="school" />
-          <q-item-main label="Docs" sublabel="quasar-framework.org" />
+          <q-item-main label="Inicio" sublabel="Ir para tela inicial" />
+        </q-item> 
+
+        <q-list-header>Configuração</q-list-header>
+        <q-item to="/alterar-dados">
+          <q-item-side icon="school" />
+          <q-item-main label="Alterar Dados" sublabel="Alterações de dados do usuário" />
         </q-item> 
       </q-list>
     </q-layout-drawer>
@@ -61,7 +67,9 @@ export default {
   methods: { 
     logoutUser() {
       AUTH.signOut().then(
-        res => console.log(res),
+        res => {
+          this.$router.push("/login")
+        },
         err => console.log(err)
       );
     }

@@ -22,15 +22,19 @@ export default function (/* { store, ssrContext } */) {
     mode: process.env.VUE_ROUTER_MODE,
     base: process.env.VUE_ROUTER_BASE
   })
-
-
+ 
   Router.beforeEach((to, from, next) => {
-    AUTH.onAuthStateChanged((user) => {
-      if (!user) {
-        console.log("Não pode acessar, pois não está logado!");
-        next("/login")
-      }
-    });
+    let currentUser = AUTH.currentUser; 
+    let usuarioLogado = !!currentUser 
+
+    console.log(usuarioLogado)
+
+    next()
+   /* if (usuarioLogado){
+      next()
+    } else {
+      next('login')
+    }*/
   })
 
   return Router

@@ -51,15 +51,31 @@ module.exports = function (ctx) {
         'QListHeader',
         'QItem',
         'QItemMain',
-        'QItemSide'
+        'QItemSide',
+        'QUploader',
+
+
+        'QCard',
+    'QCardTitle',
+    'QCardMain',
+    'QCardMedia',
+    'QCardSeparator',
+    'QCardActions'
       ],
       directives: [
         'Ripple'
       ],
       // Quasar plugins
       plugins: [
-        'Notify'
-      ]
+        'Notify',
+        'Loading'
+      ],
+      config: {
+        // optional (v0.17+)
+        loading: {
+          // Loading defaults
+        }
+      }
       // iconSet: ctx.theme.mat ? 'material-icons' : 'ionicons'
       // i18n: 'de' // Quasar language
     },

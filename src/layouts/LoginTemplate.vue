@@ -8,9 +8,9 @@
           </q-field>
 
           <q-field icon="wifi">
-            <q-input v-model="senha" float-label="Entre com sua senha"/>
+            <q-input v-model="senha" type="password" float-label="Entre com sua senha"/>
           </q-field>
-          <br>
+          <br> 
           <q-btn color="primary" class="full-width" @click="loginUser" label="Logar Usuario"/><br>
           <q-btn color="secondary" class="full-width" @click="createUser" label="Criar Usuario"/>
           <q-btn color="secondary" class="full-width" @click="logoutUser" label="Sair do usuario"/>
@@ -29,8 +29,8 @@ export default {
   data() {
     return {
       auth: "",
-      usuario: "",
-      senha: ""
+      usuario: "pedro@pedro.com",
+      senha: "pedro9630"
     };
   },
 
@@ -44,7 +44,10 @@ export default {
 
 
     loginUser() {
-      AUTH.signInWithEmailAndPassword(this.usuario, this.senha)
+      
+      this.$q.loading.show({message: 'Por favor, espere o processo de autenticação'})
+      
+      AUTH.signInWithEmailAndPassword(this.usuario, this.senha) 
           .then( user => {
                 console.log("Authenticated successfully with payload:", user);
                 this.$router.push('/')
@@ -52,7 +55,8 @@ export default {
             })
             .catch( error => {
                 console.log("Login Failed!", error);
-            });
+            }) 
+            .finally( () => this.$q.loading.hide())
     },
 
 
