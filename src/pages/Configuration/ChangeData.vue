@@ -27,7 +27,7 @@ import * as firebase from 'firebase'
 
 import { AUTH } from "plugins/firebase";
 export default {
-  name: "AlterarDados",
+  name: "ChangeData",
 
   data() {
     return {

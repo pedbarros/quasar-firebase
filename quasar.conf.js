@@ -52,23 +52,31 @@ module.exports = function (ctx) {
         'QItem',
         'QItemMain',
         'QItemSide',
+        'QItemSeparator', 
+        'QItemTile',
         'QUploader',
-
-
+ 
         'QCard',
-    'QCardTitle',
-    'QCardMain',
-    'QCardMedia',
-    'QCardSeparator',
-    'QCardActions'
+        'QCardTitle',
+        'QCardMain',
+        'QCardMedia',
+        'QCardSeparator',
+        'QCardActions',
+ 
+
+        'QSelect',
+
+        'QDatetime'
       ],
       directives: [
-        'Ripple'
+        'Ripple',
+        'CloseOverlay'
       ],
       // Quasar plugins
       plugins: [
         'Notify',
-        'Loading'
+        'Loading',
+        'GoBack'
       ],
       config: {
         // optional (v0.17+)

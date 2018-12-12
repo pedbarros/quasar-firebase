@@ -40,9 +40,22 @@
         </q-item> 
 
         <q-list-header>Configuração</q-list-header>
-        <q-item to="/alterar-dados">
-          <q-item-side icon="school" />
+        <q-item :to="{ name: 'ChangeData'}">
+          <q-item-side icon="wifi" />
           <q-item-main label="Alterar Dados" sublabel="Alterações de dados do usuário" />
+        </q-item> 
+      </q-list>
+
+
+      <q-list-header>Clientes</q-list-header>
+        <q-item :to="{ name: 'AddCustomer'}">
+          <q-item-side icon="wifi" />
+          <q-item-main label="Adicionar" sublabel="Adicionar um novo cliente" />
+        </q-item> 
+
+        <q-item :to="{ name: 'ListCustomers'}">
+          <q-item-side icon="wifi" />
+          <q-item-main label="Lista" sublabel="Lista de clientes" />
         </q-item> 
       </q-list>
     </q-layout-drawer>
