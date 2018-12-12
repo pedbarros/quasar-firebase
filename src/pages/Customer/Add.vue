@@ -72,6 +72,7 @@ export default {
                     message: "Cliente adicionado com sucesso!",
                     color: "positive"
                 });
+                this.$router.push({ name: 'ListCustomers'})
             })
             .catch(error => {
                 this.$q.notify({

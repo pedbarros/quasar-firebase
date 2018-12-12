@@ -66,7 +66,10 @@ module.exports = function (ctx) {
 
         'QSelect',
 
-        'QDatetime'
+        'QDatetime',
+
+
+        'QAlert'
       ],
       directives: [
         'Ripple',
@@ -74,9 +77,11 @@ module.exports = function (ctx) {
       ],
       // Quasar plugins
       plugins: [
+        'Dialog',
         'Notify',
         'Loading',
-        'GoBack'
+        'GoBack',
+        'ActionSheet'
       ],
       config: {
         // optional (v0.17+)
