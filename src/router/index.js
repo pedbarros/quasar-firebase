@@ -22,19 +22,22 @@ export default function (/* { store, ssrContext } */) {
     mode: process.env.VUE_ROUTER_MODE,
     base: process.env.VUE_ROUTER_BASE
   })
- 
+
+
   Router.beforeEach((to, from, next) => {
-    let currentUser = AUTH.currentUser; 
-    let usuarioLogado = !!currentUser 
+    const paginasPublicas = ['/login'];
+    const autenticacaoRequerida = !paginasPublicas.includes(to.path);
 
-    console.log(usuarioLogado)
-
-    next()
-   /* if (usuarioLogado){
-      next()
+    let usuarioLogado = !!AUTH.currentUser; 
+    
+    if (autenticacaoRequerida && !usuarioLogado) {
+      next({
+        path: '/login',
+        query: { redirect: to.fullPath }
+      })
     } else {
-      next('login')
-    }*/
+      next()
+    }
   })
 
   return Router

@@ -28,7 +28,7 @@ const routes = [
     ]
   }
     
-]
+] 
 
 
 // Always leave this as last one
