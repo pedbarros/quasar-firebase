@@ -2,16 +2,16 @@
   <q-page-container>
     <q-page padding class="docs-input row justify-center">
         <div style="width: 500px; max-width: 90vw;">
-          <q-field icon="wifi">
+          <q-field icon="person">
             <q-input v-model="user.username" float-label="Entre com seu usuário"/>
           </q-field>
 
-          <q-field icon="wifi">
+          <q-field icon="local_parking">
             <q-input v-model="user.password" type="password" float-label="Entre com sua senha"/>
           </q-field>
           <br>  
 
-          <q-field icon="wifi">
+          <q-field icon="email">
             <q-input v-model="user.email" type="email" float-label="Entre com seu email"/>
           </q-field>
           <br>       
@@ -42,6 +42,7 @@ export default {
   
   methods:{
     createUser() {
+      this.$q.loading.show({message: 'Por favor, espere o processo de registro do usuário'})
       
       let user = JSON.parse(JSON.stringify( this.user )) 
 
@@ -50,8 +51,14 @@ export default {
           let userSend = Object.defineProperty(user, 'userId', { value: res.user.uid }); 
           this.writeUserData(userSend)
         },
-        err => console.log(err)
-      );
+        err => {
+          this.$q.notify({
+                    message: err.message,
+                    color: "negative"
+                });
+        }
+      )
+      .finally( () => this.$q.loading.hide()) 
     }, 
 
     writeUserData(user) {
@@ -59,8 +66,18 @@ export default {
         username: user.username,
         email: user.email,
         profile_picture : user.profile_picture
-      }).then(res => console.log("OK"))
-        .catch(e => console.log("Erro", e));
+      }).then(res => {
+        this.$q.notify({
+                    message: "Cliente adicionado com sucesso!",
+                    color: "positive"
+                });
+      })
+        .catch(e => {
+          this.$q.notify({
+                    message: e.message,
+                    color: "negative"
+                });
+        });
     }
   }
 };

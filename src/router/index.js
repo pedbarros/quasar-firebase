@@ -25,7 +25,7 @@ export default function (/* { store, ssrContext } */) {
 
 
   Router.beforeEach((to, from, next) => {
-    const paginasPublicas = ['/login'];
+    const paginasPublicas = ['/login', '/register'];
     const autenticacaoRequerida = !paginasPublicas.includes(to.path);
 
     let usuarioLogado = !!AUTH.currentUser; 

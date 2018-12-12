@@ -2,11 +2,11 @@
   <q-page-container>
     <q-page padding class="docs-input row justify-center">
       <div style="width: 500px; max-width: 90vw;">
-        <q-field icon="wifi">
+        <q-field icon="person">
           <q-input v-model="usuario" float-label="Entre com seu usuário"/>
-        </q-field>
+        </q-field> 
 
-        <q-field icon="wifi">
+        <q-field icon="local_parking">
           <q-input v-model="senha" type="password" float-label="Entre com sua senha"/>
         </q-field>
         <br>

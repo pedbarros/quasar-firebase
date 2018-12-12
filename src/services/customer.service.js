@@ -20,6 +20,14 @@ export default {
     return firebase
       .database()
       .ref("customers") 
+  },
+
+
+  deleteCustomer(customer_id) { 
+    return firebase
+      .database()
+      .ref("customers/" + customer_id)
+      .remove()
   }
 
 

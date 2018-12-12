@@ -5,7 +5,7 @@
       <q-btn
         @click="$router.push('/login')"
         flat round dense
-        icon="icon" 
+        icon="keyboard_backspace" 
       />
 
       <q-toolbar-title>
