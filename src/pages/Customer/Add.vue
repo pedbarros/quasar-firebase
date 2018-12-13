@@ -1,21 +1,21 @@
 <template>
   <q-page padding class="docs-input row justify-center">
       <div style="width: 500px; max-width: 90vw;">
-          <q-field icon="wifi">
+          <q-field icon="person">
             <q-input v-model="customer.name" type="text" float-label="Nome do cliente"/>
           </q-field>
           
-          <q-field icon="wifi">
+          <q-field icon="date_range">
               <q-datetime v-model="customer.date_of_birth" type="date" float-label="Data de Nascimento"/> 
           </q-field>
 
 
-          <q-field icon="wifi">
+          <q-field icon="home">
             <q-input v-model="customer.address" type="text" float-label="Endereço"/>
           </q-field>
 
 
-          <q-field icon="wifi">
+          <q-field icon="cached">
               <q-select
                 v-model="customer.status"
                 float-label="Status"

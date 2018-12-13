@@ -55,20 +55,15 @@ export default {
 
     deleteCustomer(customerId) { 
       this.$q.actionSheet({
-        title: "Article Actions",
-
-        // specify ONLY IF you want grid mode:
-        grid: true,
-
-        // optional; change dismiss label (only for iOS theme)
-        dismissLabel: "Quit",
-
+        title: "Lista de opções", 
+        grid: true, 
+        dismissLabel: "Quit", 
         actions: [
           {
             label: "Deletar o cliente",
             color: "negative",
             icon: "delete",
-            handler() {
+            handler: () => {
               this.$q
                 .dialog({
                   title: "Confirmar",
@@ -98,7 +93,7 @@ export default {
             label: "Adiciona pendência",
             color: "negative",
             icon: "delete",
-            handler() { 
+            handler: () => {
               
             }
           }

@@ -69,7 +69,9 @@ module.exports = function (ctx) {
         'QDatetime',
 
 
-        'QAlert'
+        'QAlert',
+      
+        'QJumbotron'
       ],
       directives: [
         'Ripple',

@@ -4,13 +4,13 @@
       <p class="caption">Alterar Dados</p> 
 
       <q-field
-        icon="wifi"  
+        icon="person"  
       >
         <q-input v-model="displayName" float-label="Nome do usuário" />
       </q-field> 
     
      <q-field
-        icon="wifi" 
+        icon="cloud_upload" 
         helper="Some helper"
       >
       <q-uploader 

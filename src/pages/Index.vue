@@ -1,35 +1,34 @@
 <template>
-  <q-page padding class="card-examples row items-start">
-    <div class="row">
-      <div class="col-lg-12 col-md-4">
-        <q-card class="q-mt-md q-mr-sm">
-          <q-card-media>
-            <img v-if="user.photoURL" :src="user.photoURL">
-          </q-card-media> 
-          <q-card-title>
-            {{ user.displayName }} 
-          </q-card-title>
-        </q-card>
-      </div>
-      
-      <div class="col-lg-12 col-md-8"> 
-           <q-card class="q-mt-md q-mr-sm">
-            <q-card-title>
-              Informações do usuário
-              <span slot="subtitle"></span>
-            </q-card-title>
-            <q-card-main>
-              <div>Email: {{ user.email }}</div>
-              <div>Email Verificado: {{ emailVerificado }}</div> 
-              <div>Anonimo: {{ ehAnonimo }}</div> 
-            </q-card-main>
-          </q-card> 
-        </div> 
+  <q-page padding class="row items-start">
+    <q-card inline class="q-ma-sm">
+      <q-card-media>
+        <img style="zoom: 0.8" :src="user.photoURL">
+      </q-card-media>
+      <q-card-title class="relative-position">
+        <q-btn
+          fab
+          color="primary"
+          icon="place"
+          class="absolute"
+          style="top: 0; right: 8px; transform: translateY(-50%);"
+        />
 
-    </div>
+        <div class="ellipsis">{{ user.displayName }}</div>
+      </q-card-title>
+      <q-card-main>
+        <p>Email: {{ user.email }}</p>
+        <p class="text-faded">Email Verificado: {{ emailVerificado }}</p>
+        <p class="text-faded">Anonimo: {{ ehAnonimo }}</p>
+      </q-card-main>
+      <q-card-separator/>
+    </q-card>
   </q-page>
-</template>
- 
+</template> 
+
+<style>
+-moz-transform: scale(0.8);
+</style>
+
 <script>
 import { AUTH } from "plugins/firebase";
 export default {
