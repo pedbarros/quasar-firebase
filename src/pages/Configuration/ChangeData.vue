@@ -10,10 +10,10 @@
       </q-field> 
     
      <q-field
-        icon="cloud_upload" 
-        helper="Some helper"
+        icon="cloud_upload"  
       >
-      <q-uploader 
+      <q-uploader
+            float-label="Adicione a sua foto" 
             url=""
             :upload-factory="uploadFile"
         />
